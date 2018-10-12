@@ -4,6 +4,8 @@ import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -14,6 +16,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button trueButton;
+    private Button falseButton1;
+    private Button falseButton2;
+    private Button falseButton3;
+    private TextView question;
+    private TextView score;
 
     public static final String TAG = "MainActivity";
 

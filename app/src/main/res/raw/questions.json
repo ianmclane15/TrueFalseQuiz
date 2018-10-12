@@ -1,51 +1,12 @@
-The captial of the United States of America is New York City, New York
 
-False
-
-In China, you find the manufacturing city of Shenzhen(深圳)
-
-True
-
-Japan's largest metropolitan area is Osaka
-
-False
-
-Germany has the largest GDP out of any nation in the European Union
-
-True
-
-The histoical landmark Stonehenge can be found in Great Britain, United Kingdom
-
-True
-
-India's most-followed religion is Islam
-
-False
-
-5 of France's Integral Regions (similar to counties within a state) are not in contiguous France...
-Which of these islands belongs to France?
-
-Ibiza Guadeloupe (correct)
-
-The capital of Brazil is Rio de Janeiro
-
-False
-
-Italy shares a land border with 6 countries. All of these are in the continent of Europe, but how
-many of these are not in the European Union?
-
-3 4  (correct)
-
-Canade may be the second largest country in the world by area, but Russia is about how many square
-miles larger than Canada?
-
-27 thousand  2.7 million (correct)
+//This is a geography/political quiz about the 10 nations of the world with the highest GDP (Gross Domestic Product)
+        //some questions will be multiple choice, and some only true/false. Good Luck!
 
 {
 "response_code":0,
 "results":[
 {
-"type":"t/f", //USE THIS AS A MODEL, THERE ARE TRUE AND FALSE QUESTIONS AND MULTIPLE CHOICE
+"type":"boolean", //USE THIS AS A MODEL, THERE ARE TRUE AND FALSE QUESTIONS AND MULTIPLE CHOICE
 "question":"The captial of the United States of America is New York City, New York",
 "correct_answer":"False",
 "incorrect_answers":[
@@ -53,7 +14,7 @@ miles larger than Canada?
 ]
 },
 {
-"type":"t/f",
+"type":"boolean",
 "question":"In China, you find the manufacturing city of Shenzhen(深圳)",
 "correct_answer":"True",
 "incorrect_answers":[
@@ -62,15 +23,15 @@ miles larger than Canada?
 },
 {
 "type":"boolean",
-"question":"111,111,111 x 111,111,111 = 12,345,678,987,654,321",
-"correct_answer":"True",
+"question":"Japan's largest metropolitan area is Osaka",
+"correct_answer":"False",
 "incorrect_answers":[
-"False"
+"True"
 ]
 },
 {
 "type":"boolean",
-"question":"In Kingdom Hearts the Paopu fruit is said to intertwine the destinies for two people forever.",
+"question":"Germany has the largest GDP (Gross Domestic Product) out of any nation in the European Union",
 "correct_answer":"True",
 "incorrect_answers":[
 "False"
@@ -78,63 +39,60 @@ miles larger than Canada?
 },
 {
 "type":"multiple",
-"question":"Which one of these rulers did not belong to the Habsburg dynasty?",
-"correct_answer":"Philip V",
+"question":"The historical landmark Stonehenge can be found in Great Britain, United Kingdom",
+"correct_answer":"True",
 "incorrect_answers":[
-"Charles V",
-"Philip II",
-"Francis Joseph"
+"False",
 ]
 },
 {
 "type":"multiple",
-"question":"Which one of these chassis codes are used by BMW 3-series?",
-"correct_answer":"E46",
+"question":"What is India's most-followed religion?",
+"correct_answer":"Hinduism",
 "incorrect_answers":[
-"E39",
-"E85",
-"F10"
+"Islam",
+"Christianiy",
+"Jainism"
 ]
 },
 {
 "type":"multiple",
-"question":"One of the Nintendo Entertainment System voice channels supports playback of sound samples. Which one?",
-"correct_answer":"DMC",
+"question":"5 of France's Integral Regions (similar to counties within a state) are not in contiguous France... Which of these islands belongs to France?",
+"correct_answer":"Guadeloupe",
 "incorrect_answers":[
-"Noise",
-"Triangle",
-"Square"
+"Ibiza",
+"Mallorca",
+"Corsica"
 ]
 },
 {
 "type":"multiple",
-"question":"Which team has won the most Stanley Cups in the NHL?",
-"correct_answer":"Montreal Canadians",
+"question":"What is the capital of Brazil",
+"correct_answer":"Brasilia",
 "incorrect_answers":[
-"Chicago Blackhawks",
-"Toronto Maple Leafs",
-"Detroit Red Wings"
+"Rio de Janeiro",
+"São Paulo",
+"Belo Horizonte"
 ]
 },
 {
 "type":"multiple",
-"question":"In &quot;Toriko&quot;, which of the following foods is knowingly compatible with Toriko?",
-"correct_answer":"Poison Potato",
+"question":"Italy shares a land border with 6 countries. All of these are in the continent of Europe, but how many of these are in the European Union?",
+"correct_answer":"3",
 "incorrect_answers":[
-"Mors Oil",
-"Alpacookie",
-"Parmesansho Fruit"
+"2":
+"4",
+"5",
 ]
 },
 {
 "type":"multiple",
-"question":"Which band released the album &quot;Sonic Highways&quot; in 2014?",
-"correct_answer":"Foo Fighters",
+"question":"Canada may be the second largest country in the world by area, but Russia is about how many square miles larger than Canada?",
+"correct_answer":"2.7 million",
 "incorrect_answers":[
-"Coldplay",
-"Nickelback",
-"The Flaming Lips"
+"270 thousand",
+"27 million",
+"27 Thousand"
 ]
 }
-]
 }
