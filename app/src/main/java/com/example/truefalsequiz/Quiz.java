@@ -9,5 +9,7 @@ public class Quiz {
     private int score;
     private int currentQ;
 
-
+    public Quiz(List<Question> questions){
+        this.questions = questions;
+    }
 }

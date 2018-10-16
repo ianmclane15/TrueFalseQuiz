@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TrueFalseQuiz</string>
+    <string name="button_main_true">Button</string>
+    <string name="button_main_false1">Button</string>
+    <string name="button_main_false3">Button</string>
+    <string name="button_main_false2">button_main_false2</string>
+    <string name="textView_main_question">Hello World!</string>
+    <string name="textview_main_score">TextView</string>
 </resources>
