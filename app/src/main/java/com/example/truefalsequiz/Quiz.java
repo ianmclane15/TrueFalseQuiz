@@ -12,4 +12,45 @@ public class Quiz {
     public Quiz(List<Question> questions){
         this.questions = questions;
     }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void nextQuestion() {
+        currentQ++;
+    }
+
+    public Question getQuestion(int index){
+        return questions.get(index);
+    }
+
+    public void scoreUp() {
+        score++;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getCurrentQ() {
+        return currentQ;
+    }
+
+    public boolean isThereAnotherQ() {
+        if (currentQ + 1 > questions.size())
+        {return false;}
+        else{return true;}
+    }
+
+    public boolean checkAnswer(String userAnswer){
+        nextQuestion();
+        if (userAnswer.equals(questions.get(currentQ - 1).getCorrect_answer())){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }

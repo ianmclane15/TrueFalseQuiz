@@ -1,98 +1,92 @@
-
-//This is a geography/political quiz about the 10 nations of the world with the highest GDP (Gross Domestic Product)
-        //some questions will be multiple choice, and some only true/false. Good Luck!
-
-{
-"response_code":0,
-"results":[
-{
-"type":"boolean", //USE THIS AS A MODEL, THERE ARE TRUE AND FALSE QUESTIONS AND MULTIPLE CHOICE
-"question":"The captial of the United States of America is New York City, New York",
-"correct_answer":"False",
-"incorrect_answers":[
-"True",
+[
+  {
+    "type": "boolean",
+    "question": "The captial of the United States of America is New York City, New York",
+    "correct_answer": "False",
+    "incorrect_answers": [
+      "True"
+    ]
+  },
+  {
+    "type": "boolean",
+    "question": "In China, you find the manufacturing city of Shenzhen(深圳)",
+    "correct_answer": "True",
+    "incorrect_answers": [
+      "False"
+    ]
+  },
+  {
+    "type": "boolean",
+    "question": "Japan's largest metropolitan area is Osaka",
+    "correct_answer": "False",
+    "incorrect_answers": [
+      "True"
+    ]
+  },
+  {
+    "type": "boolean",
+    "question": "Germany has the largest GDP (Gross Domestic Product) out of any nation in the European Union",
+    "correct_answer": "True",
+    "incorrect_answers": [
+      "False"
+    ]
+  },
+  {
+    "type": "boolean",
+    "question": "The historical landmark Stonehenge can be found in Great Britain, United Kingdom",
+    "correct_answer": "True",
+    "incorrect_answers": [
+      "False"
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "What is India's most-followed religion?",
+    "correct_answer": "Hinduism",
+    "incorrect_answers": [
+      "Islam",
+      "Christianiy",
+      "Jainism"
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "5 of France's Integral Regions (similar to counties within a state) are not in contiguous France... Which of these islands belongs to France?",
+    "correct_answer": "Guadeloupe",
+    "incorrect_answers": [
+      "Ibiza",
+      "Mallorca",
+      "Corsica"
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "What is the capital of Brazil",
+    "correct_answer": "Brasilia",
+    "incorrect_answers": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Belo Horizonte"
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Italy shares a land border with 6 countries. All of these are in the continent of Europe, but how many of these are in the European Union?",
+    "correct_answer": "3",
+    "incorrect_answers": [
+      "2",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Canada may be the second largest country in the world by area, but Russia is about how many square miles larger than Canada?",
+    "correct_answer": "2.7 million",
+    "incorrect_answers": [
+      "270 thousand",
+      "27 million",
+      "27 Thousand"
+    ]
+  }
 ]
-},
-{
-"type":"boolean",
-"question":"In China, you find the manufacturing city of Shenzhen(深圳)",
-"correct_answer":"True",
-"incorrect_answers":[
-"False",
-]
-},
-{
-"type":"boolean",
-"question":"Japan's largest metropolitan area is Osaka",
-"correct_answer":"False",
-"incorrect_answers":[
-"True"
-]
-},
-{
-"type":"boolean",
-"question":"Germany has the largest GDP (Gross Domestic Product) out of any nation in the European Union",
-"correct_answer":"True",
-"incorrect_answers":[
-"False"
-]
-},
-{
-"type":"multiple",
-"question":"The historical landmark Stonehenge can be found in Great Britain, United Kingdom",
-"correct_answer":"True",
-"incorrect_answers":[
-"False",
-]
-},
-{
-"type":"multiple",
-"question":"What is India's most-followed religion?",
-"correct_answer":"Hinduism",
-"incorrect_answers":[
-"Islam",
-"Christianiy",
-"Jainism"
-]
-},
-{
-"type":"multiple",
-"question":"5 of France's Integral Regions (similar to counties within a state) are not in contiguous France... Which of these islands belongs to France?",
-"correct_answer":"Guadeloupe",
-"incorrect_answers":[
-"Ibiza",
-"Mallorca",
-"Corsica"
-]
-},
-{
-"type":"multiple",
-"question":"What is the capital of Brazil",
-"correct_answer":"Brasilia",
-"incorrect_answers":[
-"Rio de Janeiro",
-"São Paulo",
-"Belo Horizonte"
-]
-},
-{
-"type":"multiple",
-"question":"Italy shares a land border with 6 countries. All of these are in the continent of Europe, but how many of these are in the European Union?",
-"correct_answer":"3",
-"incorrect_answers":[
-"2":
-"4",
-"5",
-]
-},
-{
-"type":"multiple",
-"question":"Canada may be the second largest country in the world by area, but Russia is about how many square miles larger than Canada?",
-"correct_answer":"2.7 million",
-"incorrect_answers":[
-"270 thousand",
-"27 million",
-"27 Thousand"
-]
-}
-}

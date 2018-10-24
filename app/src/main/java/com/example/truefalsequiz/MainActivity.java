@@ -4,9 +4,16 @@ import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -22,17 +29,20 @@ public class MainActivity extends AppCompatActivity {
     private Button falseButton1;
     private Button falseButton2;
     private Button falseButton3;
-    private TextView question;
-    private TextView score;
+    private TextView questionText;
+    private TextView scoreView;
+    private ListView answerListView;
     private String string;
     private String string1;
     private String string2;
     private String string3;
     private String selectedAnswer;
+    private int score;
 
     private Quiz quiz;
 
     public static final String TAG = "MainActivity";
+    private ArrayAdapter<String> adapter;
 
 
     @Override
@@ -51,10 +61,9 @@ public class MainActivity extends AppCompatActivity {
         // convert your array to a list using the Arrays utility class
         List<Question> questionList = Arrays.asList(questions);
         // verify that it read everything properly
-        Log.d(TAG, "onCreate: " + questionList.toString());
+        Log.d(TAG, "onCreate: " + jsonString + "\n" + questionList.toString());
         quiz = new Quiz(questionList);
         wireWidgets();
-        setOnClickListeners();
     }
 
     public String readTextFile(InputStream inputStream) {
@@ -73,32 +82,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return outputStream.toString();
     }
-    private void setOnClickListeners(){
-        trueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                quiz.getQuestion().checkAnswer(trueButton.getText().toString());
-            }
-        });
-        falseButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedAnswer = trueButton.getText().toString();
-            }
-        });
-        falseButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedAnswer = trueButton.getText().toString();
-            }
-        });
-        falseButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedAnswer = trueButton.getText().toString();
-            }
-        });
-    }
 
     private void setToTrueFalse() {
         falseButton2.setVisibility(View.GONE);
@@ -113,17 +96,75 @@ public class MainActivity extends AppCompatActivity {
         falseButton2.setVisibility(View.VISIBLE);
         falseButton3.setVisibility(View.VISIBLE);
         // set the answers to the buttons (can do randomly)
-        trueButton.setText(//*set answers);
+        //trueButton.setText(//*set answers);
     }
 
     private void wireWidgets() {
-        trueButton=findViewById(R.id.button_main_true);
-        falseButton1=findViewById(R.id.button_main_false1);
-        falseButton2=findViewById(R.id.button_main_false2);
-        falseButton3=findViewById(R.id.button_main_false3);
-        question=findViewById(R.id.textView_main_question);
-        score=findViewById(R.id.textView_main_score);
+        questionText=findViewById(R.id.textView_main_question);
+        scoreView=findViewById(R.id.textView_main_score);
+        answerListView = findViewById(R.id.listview_main_answers);
+        setUpListView();
+    }
 
+    private void setUpListView() {
+        /*adapter = new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return quiz.getQuestion(quiz.getCurrentQ()).getIncorrect_answers().size() + 1;
+            }
+
+            @Override
+            public Object getItem(int position) {
+                return null;
+            }
+
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                //get answer choice text
+                Question question = quiz.getQuestion(quiz.getCurrentQ());
+                String answerText = null;
+                if (position == 0) {
+                    answerText = question.getCorrect_answer();
+                } else {
+                    answerText = question.getIncorrect_answers().get(position - 1);
+                }
+                //wire widgets
+                questionText.setText(question.toString());
+                LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+                View child = inflater.inflate(R.layout.quiz_activity_item, parent, false);
+                TextView answerTextView = child.findViewById(R.id.answer_choice_item);
+                answerTextView.setText(answerText);
+                return child;
+            }
+        };*/
+
+        //TODO: get randomized answers from quiz
+        //TODO: check for correct when item is chosen/selected
+        questionText.setText(quiz.getQuestion(quiz.getCurrentQ()).getQuestion());
+        scoreView.setText(String.valueOf(score));
+        final List<String> answers = quiz.getQuestion(quiz.getCurrentQ()).getRandomizedAnswers();
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, answers);
+        answerListView.setAdapter(adapter);
+        answerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (quiz.checkAnswer(answers.get(position)) == true){
+                    score++;
+                    setUpListView();
+                    Toast.makeText(MainActivity.this, "Correct! :D", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    setUpListView();
+                    Toast.makeText(MainActivity.this, "Wrong! >:0", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
 }
