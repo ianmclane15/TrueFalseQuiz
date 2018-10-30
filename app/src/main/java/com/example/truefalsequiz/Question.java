@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-//make a method that shuffles000 the list of correct and incorrect answers
+//make a method that shuffles the list of correct and incorrect answers
 public class Question {
     private String question;
     private String correct_answer;
