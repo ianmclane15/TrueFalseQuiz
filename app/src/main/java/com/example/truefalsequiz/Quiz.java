@@ -21,6 +21,8 @@ public class Quiz {
         currentQ++;
     }
 
+    public void setCurrentQ(int i) { currentQ = i;}
+
     public Question getQuestion(int index){
         return questions.get(index);
     }
@@ -44,7 +46,6 @@ public class Quiz {
     }
 
     public boolean checkAnswer(String userAnswer){
-        nextQuestion();
         if (userAnswer.equals(questions.get(currentQ - 1).getCorrect_answer())){
             return true;
         }

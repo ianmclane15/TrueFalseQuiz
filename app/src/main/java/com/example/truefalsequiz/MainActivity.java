@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private String string3;
     private String selectedAnswer;
     private int score;
+    private int currentQ;
 
     private Quiz quiz;
 
@@ -153,12 +154,24 @@ public class MainActivity extends AppCompatActivity {
         answerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (quiz.getCurrentQ() == 9){
+                    if (quiz.checkAnswer(answers.get(position)) == true){
+                        score++;
+
+                        Toast.makeText(MainActivity.this, "Great Job! Your Score is: " +quiz.getScore(), Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, "Great Job! Your Score is: " +quiz.getScore(), Toast.LENGTH_LONG).show();
+                    }
+                }
                 if (quiz.checkAnswer(answers.get(position)) == true){
                     score++;
+                    quiz.nextQuestion();
                     setUpListView();
                     Toast.makeText(MainActivity.this, "Correct! :D", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    quiz.nextQuestion();
                     setUpListView();
                     Toast.makeText(MainActivity.this, "Wrong! >:0", Toast.LENGTH_SHORT).show();
                 }

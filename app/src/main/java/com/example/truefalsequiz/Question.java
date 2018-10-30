@@ -59,7 +59,7 @@ public class Question {
     }
 
     public List<String> getRandomizedAnswers(){
-        List<String> toReturn = new ArrayList<String>();
+        List<String> toReturn = new ArrayList<>();
         toReturn.add(correct_answer);
         toReturn.addAll(incorrect_answers);
         Collections.shuffle(toReturn);
