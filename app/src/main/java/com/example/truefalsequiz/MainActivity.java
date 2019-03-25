@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         // create a gson object
         Gson gson = new Gson();
         // read your json file into an array of questions
-        Question[] questions =  gson.fromJson(jsonString, Question[].class);
+        Question[] questions = gson.fromJson(jsonString, Question[].class);
         // convert your array to a list using the Arrays utility class
         List<Question> questionList = Arrays.asList(questions);
         // verify that it read everything properly
@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void wireWidgets() {
-        questionText=findViewById(R.id.textView_main_question);
-        scoreView=findViewById(R.id.textView_main_score);
+        questionText = findViewById(R.id.textView_main_question);
+        scoreView = findViewById(R.id.textView_main_score);
         answerListView = findViewById(R.id.listview_main_answers);
         setUpListView();
     }
@@ -154,30 +154,27 @@ public class MainActivity extends AppCompatActivity {
         answerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (quiz.getCurrentQ() == 9){
-                    if (quiz.checkAnswer(answers.get(position)) == true){
-                        score++;
-
-                        Toast.makeText(MainActivity.this, "Great Job! Your Score is: " +quiz.getScore(), Toast.LENGTH_LONG).show();
-                    }
-                    else{
-                        Toast.makeText(MainActivity.this, "Great Job! Your Score is: " +quiz.getScore(), Toast.LENGTH_LONG).show();
-                    }
-                }
-                if (quiz.checkAnswer(answers.get(position)) == true){
+                if (quiz.checkAnswer(answers.get(position)) == true) {
                     score++;
-                    quiz.nextQuestion();
-                    setUpListView();
                     Toast.makeText(MainActivity.this, "Correct! :D", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    quiz.nextQuestion();
-                    setUpListView();
+                else{
                     Toast.makeText(MainActivity.this, "Wrong! >:0", Toast.LENGTH_SHORT).show();
                 }
 
-            }
-        });
-    }
+                if (quiz.isThereAnotherQ()) {
 
+                    quiz.nextQuestion();
+                    setUpListView();
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Your score is: " + score + "!", Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+
+        });
+
+    }
 }

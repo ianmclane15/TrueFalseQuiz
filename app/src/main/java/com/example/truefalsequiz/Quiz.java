@@ -40,13 +40,13 @@ public class Quiz {
     }
 
     public boolean isThereAnotherQ() {
-        if (currentQ + 1 > questions.size())
+        if (currentQ + 1 >= questions.size())
         {return false;}
         else{return true;}
     }
 
     public boolean checkAnswer(String userAnswer){
-        if (userAnswer.equals(questions.get(currentQ - 1).getCorrect_answer())){
+        if (userAnswer.equals(questions.get(currentQ).getCorrect_answer())){
             return true;
         }
         else{
